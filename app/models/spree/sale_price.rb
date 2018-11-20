@@ -56,7 +56,8 @@ module Spree
 
     protected
       def touch_product
-        self.variant.product.touch
+        #don't really care if the variant has already been deleted
+        self.variant.product.touch rescue false
       end
 
   end
